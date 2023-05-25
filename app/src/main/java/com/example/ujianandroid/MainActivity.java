@@ -33,12 +33,16 @@ public class MainActivity extends AppCompatActivity {
                 String isian_nama_depan = edNamaDepan.getText().toString();
                 String isian_nama_belakang = edNamaBelakang.getText().toString();
                 String isian_umur = edUmur.getText().toString();
+                int jumlahumur = Integer.parseInt(edUmur.getText().toString());
 
                 if(isian_nama_depan.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Isian masih kosong", Toast.LENGTH_SHORT).show();
                 }else{
                     String nama_lengkap = isian_umur.concat(" ").concat(isian_nama_depan).concat(isian_nama_belakang);
                     //daftar_nama.clear();
+                    for (int i = 0; i < jumlahumur; i++){
+                        daftar_nama.add(nama_lengkap);
+                    }
                     daftar_nama.add(nama_lengkap);
                     edNamaDepan.setText("");
                     edNamaBelakang.setText("");
